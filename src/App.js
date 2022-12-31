@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./page/home";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Uzbekistan from "./page/uzbekistan";
+import Sport from "./page/sport";
+import Jahon from "./page/jahon";
+import Xabarlar from "./page/Xabarlar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Xabarlar />} />
+          <Route path="/uzbekistan" element={<Uzbekistan />} />
+          <Route path="/sport" element={<Sport />} />
+          <Route path="/jahon" element={<Jahon />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
