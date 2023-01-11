@@ -8,7 +8,7 @@
 }
 .home {
   margin: 0 auto;
-  width: 1330px;
+  width: 1320px;
 }
 .advert {
   width: 98%;
@@ -162,12 +162,12 @@ header {
           }
         }
       }
-      .other__main-card {
-        width: 100%;
+      .other__main-cards {
         display: flex;
+        width: 100%;
         flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 15px 0;
+        justify-content: space-around;
+
         .other-card {
           margin: 10px 0;
           width: 480px;
@@ -237,7 +237,9 @@ header {
       }
     }
     .songi-news {
+      width: 320px;
       position: relative;
+      padding-bottom: 85px;
       .songi-news__card {
         width: 315px;
         padding: 10px;
@@ -288,7 +290,7 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    height: 600px;
+    height: 650px;
     margin-top: 30px;
     .box-right {
       width: 50%;

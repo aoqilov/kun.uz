@@ -5,6 +5,7 @@ import Uzbekistan from "./page/uzbekistan";
 import Sport from "./page/sport";
 import Jahon from "./page/jahon";
 import Xabarlar from "./page/Xabarlar";
+import Barchasi from "./page/Barchasi";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<Xabarlar />} />
+          <Route path="/barchasi" element={<Barchasi />} />
           <Route path="/uzbekistan" element={<Uzbekistan />} />
           <Route path="/sport" element={<Sport />} />
           <Route path="/jahon" element={<Jahon />} />

@@ -1,71 +1,66 @@
-import React from "react";
-
+import React, { useState } from "react";
 import TripOriginIcon from "@mui/icons-material/TripOrigin";
+// import api
+import { warAll, warMain } from "../api/warApi";
+import { useNavigate } from "react-router-dom";
 
 const War = () => {
+  const [warMainNews, setWarMainNews] = useState(warMain);
+  const [warAllNews, setWarAllNews] = useState(warAll);
+  let ism = [];
+  const jonatuvchi = useNavigate();
+  function first(id, nameApi) {
+    const yangi = nameApi.filter((item) => item.id === id);
+    ism.push(yangi);
+    jonatuvchi("/:id", { state: { ism } });
+  }
+  const send = useNavigate();
+  const tema = "Rosiya va Ukraina urushi";
+  const nomi = "warAllNews";
   return (
     <div>
-      {" "}
       <section className="war">
         <div id="title-one">
-          <a href="!#" className="crcle-box">
+          <div className="crcle-box">
             <TripOriginIcon className="crcle-icon" />
-            <h3 className="crcle-title">Songi yangiliklar</h3>
-          </a>
+            <h3
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                send("/barchasi", { state: { warAllNews, tema, nomi } })
+              }
+              className="crcle-title"
+            >
+              Rossiya-Ukraina urushi
+            </h3>
+          </div>
         </div>
         <div className="war__twice">
           <div className="twice-one">
-            <div className="one-card">
-              <img
-                src="https://storage.kun.uz/source/thumbnails/_medium/9/zZyhmwTvM0HZDSrimd8LHYM35LKh43rM_medium.jpg"
-                alt="war"
-                className="card-img"
-              />
-              <div className="back-war"></div>
-              <h1 className="card-title">
-                Ukrainada 50 million dollarlik temir rudasi hibsga olindi - bu
-                Alisher Usmonovga aloqador kompaniyaga tegishli
-              </h1>
-            </div>
+            {warMain.slice(0, 1).map((item, idx) => {
+              return (
+                <div key={idx} className="one-card">
+                  <img src={item.photo[0]} alt="war" className="card-img" />
+                  <div className="back-war"></div>
+                  <h1
+                    onClick={() => first(idx, warMainNews)}
+                    className="card-title"
+                  >
+                    {item.title}
+                  </h1>
+                </div>
+              );
+            })}
           </div>
           <div className="twice-two">
             <div className="two-cards">
-              <div className="card">
-                <img
-                  src="	https://storage.kun.uz/source/thumbnails/_medium/9/aCW7c2t7RjqO5UY89fPKLYj4axYeMily_medium.jpg"
-                  alt="war"
-                />
-                <h3>
-                  Egallab olingan Makeyevkada 8 kishilik oila otib tashlandi
-                </h3>
-              </div>
-              <div className="card">
-                <img
-                  src="	https://storage.kun.uz/source/thumbnails/_medium/9/aCW7c2t7RjqO5UY89fPKLYj4axYeMily_medium.jpg"
-                  alt="war"
-                />
-                <h3>
-                  Egallab olingan Makeyevkada 8 kishilik oila otib tashlandi
-                </h3>
-              </div>
-              <div className="card">
-                <img
-                  src="	https://storage.kun.uz/source/thumbnails/_medium/9/aCW7c2t7RjqO5UY89fPKLYj4axYeMily_medium.jpg"
-                  alt="war"
-                />
-                <h3>
-                  Egallab olingan Makeyevkada 8 kishilik oila otib tashlandi
-                </h3>
-              </div>
-              <div className="card">
-                <img
-                  src="	https://storage.kun.uz/source/thumbnails/_medium/9/aCW7c2t7RjqO5UY89fPKLYj4axYeMily_medium.jpg"
-                  alt="war"
-                />
-                <h3>
-                  Egallab olingan Makeyevkada 8 kishilik oila otib tashlandi
-                </h3>
-              </div>
+              {warAllNews.slice(0, 4).map((item, idx) => {
+                return (
+                  <div key={idx} className="card">
+                    <img src={item.photo[0]} alt="war" />
+                    <h3 onClick={() => first(idx, warAllNews)}>{item.title}</h3>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

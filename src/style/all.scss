@@ -65,3 +65,50 @@
     }
   }
 }
+.songi-news {
+  margin-top: 20px;
+  width: 280px;
+  position: relative;
+  padding-bottom: 85px;
+  .songi-news__card {
+    width: auto;
+    padding: 10px;
+    border-bottom: 1px solid #a8a5a5;
+    .card-title {
+      font-size: 14px;
+      line-height: 21px;
+      color: black;
+      font-weight: 600;
+      padding-top: 10px;
+      &:hover {
+        cursor: pointer;
+        color: hsl(220, 100%, 35%);
+      }
+    }
+  }
+  .songi-news__koproq {
+    display: flex;
+    height: 60px;
+    background-color: #a8a5a5;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    width: 95%;
+    border-left: 5px solid #003bb4;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0px;
+    h3 {
+      font-size: 14px;
+      color: black;
+      font-weight: 600;
+      text-transform: capitalize;
+      &:hover {
+        cursor: pointer;
+        color: #003bb4;
+      }
+    }
+  }
+}

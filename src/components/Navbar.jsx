@@ -1,6 +1,7 @@
 import React from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,12 +9,12 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="top__nav">
           <div className="navbar__logo">
-            <a href="!#">
+            <Link to={"/"}>
               <img
                 src="	https://kun.uz/assets/cd6ab492/img/kun-uz-logo.svg"
                 alt="navbar__logo-img"
               />
-            </a>
+            </Link>
           </div>
           <div className="navbar__menu">
             <ul className="menu__list">

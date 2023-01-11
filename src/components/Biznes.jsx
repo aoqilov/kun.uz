@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// impoert api
+import { biznes } from "../api/biznes";
 
 const Biznes = () => {
+  const [biznesNews, setBiznesNews] = useState(biznes);
+  let ism = [];
+  const jonatuvchi = useNavigate();
+  function first(id) {
+    const yangi = biznesNews.filter((item) => item.id == id);
+    ism.push(yangi);
+    jonatuvchi("/:id", { state: { ism } });
+  }
+
   return (
     <div>
       <section className="biznes">
@@ -18,56 +30,14 @@ const Biznes = () => {
           </a>
         </div>
         <div className="biznes-block">
-          <div className="block-card">
-            <img
-              src="https://storage.kun.uz/source/thumbnails/_medium/9/IO0t7N2OUvWPNdVc-HkVRikIdkdAKOYn_medium.jpg"
-              alt=""
-            />
-            <h1>
-              Mixed-use loyihasi Livingood sizning xaridingizni yanada foydali
-              qilish uchun dekabr oyida bir nechta takliflar tayyorlamoqda
-            </h1>
-          </div>
-          <div className="block-card">
-            <img
-              src="https://storage.kun.uz/source/thumbnails/_medium/9/IO0t7N2OUvWPNdVc-HkVRikIdkdAKOYn_medium.jpg"
-              alt=""
-            />
-            <h1>
-              Mixed-use loyihasi Livingood sizning xaridingizni yanada foydali
-              qilish uchun dekabr oyida bir nechta takliflar tayyorlamoqda
-            </h1>
-          </div>
-          <div className="block-card">
-            <img
-              src="https://storage.kun.uz/source/thumbnails/_medium/9/IO0t7N2OUvWPNdVc-HkVRikIdkdAKOYn_medium.jpg"
-              alt=""
-            />
-            <h1>
-              Mixed-use loyihasi Livingood sizning xaridingizni yanada foydali
-              qilish uchun dekabr oyida bir nechta takliflar tayyorlamoqda
-            </h1>
-          </div>
-          <div className="block-card">
-            <img
-              src="https://storage.kun.uz/source/thumbnails/_medium/9/IO0t7N2OUvWPNdVc-HkVRikIdkdAKOYn_medium.jpg"
-              alt=""
-            />
-            <h1>
-              Mixed-use loyihasi Livingood sizning xaridingizni yanada foydali
-              qilish uchun dekabr oyida bir nechta takliflar tayyorlamoqda
-            </h1>
-          </div>
-          <div className="block-card">
-            <img
-              src="https://storage.kun.uz/source/thumbnails/_medium/9/IO0t7N2OUvWPNdVc-HkVRikIdkdAKOYn_medium.jpg"
-              alt=""
-            />
-            <h1>
-              Mixed-use loyihasi Livingood sizning xaridingizni yanada foydali
-              qilish uchun dekabr oyida bir nechta takliflar tayyorlamoqda
-            </h1>
-          </div>
+          {biznesNews.slice(0, 5).map((item, idx) => {
+            return (
+              <div key={idx} className="block-card">
+                <img src={item.photo[0]} alt="" />
+                <h1 onClick={() => first(idx)}>{item.title}</h1>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
