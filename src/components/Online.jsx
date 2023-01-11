@@ -1,4 +1,5 @@
 import React from "react";
+import TripOriginIcon from "@mui/icons-material/TripOrigin";
 
 const Online = () => {
   return (
@@ -6,19 +7,11 @@ const Online = () => {
       <section className="online">
         <div className="video">
           <div id="title-twice">
-            <a href="!#" class="crcle-box">
-              <svg
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium crcle-icon css-i4bv87-MuiSvgIcon-root"
-                focusable="false"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                data-testid="TripOriginIcon"
-              >
-                <path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10 6c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6z"></path>
-              </svg>
-              <h3 class="crcle-title">Video yangiliklar</h3>
+            <a href="" className="crcle-box">
+              <TripOriginIcon className="crcle-icon" />
+              <h3 className="crcle-title">Video yangiliklar</h3>
             </a>
-            <a href="!#" class="crcle-box2">
+            <a className="crcle-box2" style={{ cursor: "pointer" }}>
               barchasi
             </a>
           </div>
@@ -76,19 +69,11 @@ const Online = () => {
         </div>
         <div className="foto">
           <div id="title-twice">
-            <a href="!#" class="crcle-box">
-              <svg
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium crcle-icon css-i4bv87-MuiSvgIcon-root"
-                focusable="false"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                data-testid="TripOriginIcon"
-              >
-                <path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10 6c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6z"></path>
-              </svg>
-              <h3 class="crcle-title">Foto yangiliklar</h3>
+            <a href="" className="crcle-box">
+              <TripOriginIcon className="crcle-icon" />
+              <h3 className="crcle-title">Foto yangiliklar</h3>
             </a>
-            <a href="!#" class="crcle-box2">
+            <a className="crcle-box2" style={{ cursor: "pointer" }}>
               barchasi
             </a>
           </div>

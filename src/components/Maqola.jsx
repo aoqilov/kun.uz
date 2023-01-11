@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TripOriginIcon from "@mui/icons-material/TripOrigin";
 
 // import api
 import { maqolaApi } from "../api/maqolaApi";
@@ -45,6 +46,22 @@ const Maqola = () => {
             barchasi
           </a>
         </div>
+        <div id="title-twice">
+          <div href="" className="crcle-box">
+            <TripOriginIcon className="crcle-icon" />
+            <h3 className="crcle-title">Maqolalar</h3>
+          </div>
+          <a
+            onClick={() =>
+              maqolaSend("/barchasi", { state: { maqolaNews, tema, nomi } })
+            }
+            className="crcle-box2"
+            style={{ cursor: "pointer" }}
+          >
+            barchasi
+          </a>
+        </div>
+
         <div className="maqola-news">
           {maqolaNews.slice(0, 6).map((item, idx, arr) => {
             return (
